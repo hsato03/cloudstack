@@ -29,6 +29,7 @@ import org.apache.cloudstack.api.response.PodResponse;
 import org.apache.cloudstack.api.response.ZoneResponse;
 import org.apache.cloudstack.config.Configuration;
 import org.apache.cloudstack.ha.HAConfig;
+import org.apache.cloudstack.quota.QuotaTariff;
 import org.apache.cloudstack.storage.object.Bucket;
 import org.apache.cloudstack.storage.object.ObjectStore;
 import org.apache.cloudstack.usage.Usage;
@@ -1182,9 +1183,9 @@ public class EventTypes {
         entityEventDetails.put(EVENT_BUCKET_DELETE, Bucket.class);
 
         // Quota
-        entityEventDetails.put(EVENT_QUOTA_TARIFF_CREATE, "QuotaTariff");
-        entityEventDetails.put(EVENT_QUOTA_TARIFF_DELETE, "QuotaTariff");
-        entityEventDetails.put(EVENT_QUOTA_TARIFF_UPDATE, "QuotaTariff");
+        entityEventDetails.put(EVENT_QUOTA_TARIFF_CREATE, QuotaTariff.class);
+        entityEventDetails.put(EVENT_QUOTA_TARIFF_DELETE, QuotaTariff.class);
+        entityEventDetails.put(EVENT_QUOTA_TARIFF_UPDATE, QuotaTariff.class);
     }
 
     public static String getEntityForEvent(String eventName) {
